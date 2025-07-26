@@ -1,5 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+/* Night sky background */
+body {
+    background: linear-gradient(to bottom, #232946 0%, #1a1a2e 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Calibri', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Stars */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+    z-index: 2;
+}
+@keyframes twinkle {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+/* Moon */
+.moon {
+    position: absolute;
+    top: 60px;
+    right: 120px;
+    width: 80px;
+    height: 80px;
+    background: #fffbe7;
+    border-radius: 50%;
+    box-shadow: 0 0 40px 10px #fffbe7, 0 0 0 8px #f3e9c7;
+    z-index: 2;
+    animation: moon-glow 3s ease-in-out infinite alternate;
+}
+@keyframes moon-glow {
+    from { box-shadow: 0 0 40px 10px #fffbe7, 0 0 0 8px #f3e9c7; }
+    to   { box-shadow: 0 0 70px 24px #fffbe7cc, 0 0 0 16px #f3e9c7aa; }
+}
+
 body {
     background-color: #f0f0f0;
     font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Calibri', Arial, sans-serif;
@@ -35,23 +80,34 @@ body {
     margin-top: 10px;
 }
 
+/* Make sure login-container is above the background effects */
 .login-container {
+    position: relative;
+    z-index: 10;
     border: 2px solid #333;
-    border-radius: 12px;
-    padding: 32px 28px;
-    background: #fff;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    border-radius: 18px;
+    padding: 36px 32px;
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 40px; /* Added top margin for better centering */
+    transition: box-shadow 0.3s;
+}
+.login-container:hover {
+    box-shadow: 0 12px 48px 0 #4e9cff55;
+    border-color: #4e9cff;
 }
 
-.login-container,
-.login-container * {
-    color: #222 !important; /* Uniform text color for all elements inside login form */
+.login-container input,
+.login-container button {
+    color: #222 !important;
 }
+
 
 .credentials-info {
     margin-top: 18px;
@@ -61,7 +117,21 @@ body {
     padding-top: 10px;
     width: 100%;
     text-align: center;
+    color: #222;
 }
+
+.credentials-info strong {
+    font-weight: 500;
+    line-height: 1.6;
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.cred-user, .cred-pass {
+    color: #4e9cff;
+    font-weight: bold;
+}
+
 .credentials-info p {
     margin: 0;
     display: inline;
@@ -124,3 +194,175 @@ body {
     color: #fff !important;
     border-color: #1a73e8;
 }
+
+/* Workspace silhouette at the bottom */
+.workspace-silhouette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 160px;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient(to top, #232946 60%, transparent 100%);
+}
+.workspace-desk {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    height: 32px;
+    background: #22263a;
+    border-radius: 16px 16px 8px 8px;
+    box-shadow: 0 8px 24px 0 #161a2e88;
+    z-index: 4;
+}
+.workspace-chair {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 40px;
+    background: #2e3250;
+    border-radius: 30px 30px 12px 12px;
+    z-index: 5;
+}
+.workspace-laptop {
+    position: absolute;
+    bottom: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 18px;
+    background: #eaf4ff;
+    border-radius: 4px 4px 2px 2px;
+    box-shadow: 0 2px 8px #1a1a2e44;
+    z-index: 6;
+    border: 2px solid #4e9cff;
+}
+.workspace-lamp {
+    position: absolute;
+    bottom: 90px;
+    left: calc(50% + 80px);
+    width: 12px;
+    height: 40px;
+    background: #4e9cff;
+    border-radius: 6px;
+    z-index: 7;
+    box-shadow: 0 0 24px 8px #fffbe7aa;
+}
+
+.login-container h1.login-title {
+    color: #ffffff;
+}
+
+.credentials-info {
+    color: #ffffff;
+}
+
+.credentials-info strong {
+    color: #ffffff;
+}
+
+
+/* Extra Small Devices (Phones, Portrait) */
+@media (max-width: 480px) {
+    .login-container {
+        width: 90%;
+        padding: 20px 12px;
+    }
+
+    .login-container h1.login-title {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+
+    .credentials-info {
+        font-size: 13px;
+        padding-top: 6px;
+    }
+}
+
+/* Small Devices (Landscape phones & small tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .login-container {
+        width: 80%;
+        padding: 26px 18px;
+    }
+
+    .login-container h1.login-title {
+        font-size: 1.6rem;
+    }
+
+    .credentials-info {
+        font-size: 14px;
+    }
+
+    .button-group {
+        flex-direction: row;
+    }
+
+    .button-group button {
+        width: auto;
+    }
+}
+
+/* Medium Devices (Tablets and small laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .login-container {
+        width: 60%;
+    }
+
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+        width: 240px;
+    }
+
+    .credentials-info {
+        font-size: 15px;
+    }
+}
+
+/* Large Screens (Desktops) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .login-container {
+        width: 460px;
+    }
+
+    .credentials-info {
+        font-size: 16px;
+    }
+}
+
+/* Extra Large Screens (Ultrawide monitors) */
+@media (min-width: 1441px) {
+    .login-container {
+        width: 480px;
+    }
+
+    .login-container h1.login-title {
+        font-size: 2rem;
+    }
+
+    .credentials-info {
+        font-size: 17px;
+    }
+}
+

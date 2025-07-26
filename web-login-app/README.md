@@ -1,3 +1,6 @@
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/T-e-j-k-u-m-a-r/ai-review-demo?utm_source=oss&utm_medium=github&utm_campaign=T-e-j-k-u-m-a-r%2Fai-review-demo&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
+
 # Web Login App
 
 This project is a simple web application that features a login page. It allows users to enter their username and password, validates the input, and provides feedback based on the entered credentials.
@@ -44,3 +47,4 @@ This project does not have any external dependencies. It uses standard HTML, CSS
 ## License
 
 This project is open-source and available under the MIT License.
+
