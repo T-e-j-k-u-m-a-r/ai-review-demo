@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    background-color: #f0f0f0;
+    font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Calibri', Arial, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: x-large;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: green;
+    margin-top: 10px;
+}
+
+.login-container {
+    border: 2px solid #333;
+    border-radius: 12px;
+    padding: 32px 28px;
+    background: #fff;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px; /* Added top margin for better centering */
+}
+
+.login-container,
+.login-container * {
+    color: #222 !important; /* Uniform text color for all elements inside login form */
+}
+
+.credentials-info {
+    margin-top: 18px;
+    font-size: medium;
+    display: block;
+    border-top: 2px solid #4e9cff;
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+.credentials-info p {
+    margin: 0;
+    display: inline;
+}
+.credentials-list > div {
+    margin-top: 2px;
+}
+
+.login-container h1 {
+    text-align: center;
+    width: 100%;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 220px;
+    margin-bottom: 12px;
+    padding: 8px;
+    font-size: large;
+    font-family: Calibri, sans-serif;
+    border-radius: 20px; /* Added for round borders */
+    border: 1.5px solid #4e9cff;
+    outline: none;
+    transition: border-color 0.2s;
+}
+#loginForm input[type="text"]:focus,
+#loginForm input[type="password"]:focus {
+    border-color: #1a73e8;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.button-group button {
+    font-size: large;
+    font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Calibri', Arial, sans-serif;
+    padding: 8px 24px;
+    border: 2px solid #4e9cff;
+    border-radius: 20px;
+    background-color: #eaf4ff;
+    color: #222 !important; /* Uniform button text color */
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.button-group button:hover {
+    background-color: #4e9cff;
+    color: #fff !important;
+    border-color: #1a73e8;
+}
